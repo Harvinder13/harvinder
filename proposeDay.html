@@ -271,6 +271,37 @@
             font-family: 'Brush Script MT', cursive;
         }
 
+        .yes-button {
+            margin-top: 30px;
+            padding: 15px 50px;
+            background: linear-gradient(135deg, #ff69b4, #ff1744);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(255, 23, 68, 0.4);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        .envelope-container.opened .yes-button {
+            opacity: 1;
+            transform: scale(1);
+            transition: all 0.8s ease 1.5s;
+        }
+
+        .yes-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(255, 23, 68, 0.6);
+        }
+
+        .yes-button:active {
+            transform: scale(0.95);
+        }
+
         /* Hearts decoration on letter */
         .letter-hearts {
             position: absolute;
@@ -395,6 +426,469 @@
                 transform: rotate(-25deg) translateY(-15px);
             }
         }
+
+
+
+
+
+         /* Teddy Bear Couple Scene */
+        .teddy-couple-scene {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, #ffc3a0 0%, #ffafbd 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 200;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 1s ease;
+        }
+
+        .teddy-couple-scene.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .teddy-couple {
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            gap: 20px;
+            animation: coupleFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes coupleFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Male Teddy (Light Brown) */
+        .male-teddy {
+            position: relative;
+            width: 180px;
+            height: 220px;
+        }
+
+        .male-teddy .head {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: #A0826D;
+            border-radius: 50%;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: inset -5px -5px 15px rgba(0,0,0,0.2);
+        }
+
+        .male-teddy .ear {
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background: #A0826D;
+            border-radius: 50%;
+            top: 0;
+            box-shadow: inset -3px -3px 8px rgba(0,0,0,0.2);
+        }
+
+        .male-teddy .ear.left { left: -10px; }
+        .male-teddy .ear.right { right: -10px; }
+
+        .male-teddy .ear-inner {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #C4A586;
+            border-radius: 50%;
+            top: 8px;
+            left: 8px;
+        }
+
+        .male-teddy .eye {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #000;
+            border-radius: 50%;
+            top: 30px;
+        }
+
+        .male-teddy .eye.left { left: 20px; }
+        .male-teddy .eye.right { right: 20px; }
+
+        .male-teddy .snout {
+            position: absolute;
+            width: 40px;
+            height: 35px;
+            background: #C4A586;
+            border-radius: 50%;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .male-teddy .nose {
+            position: absolute;
+            width: 12px;
+            height: 10px;
+            background: #654321;
+            border-radius: 50% 50% 0 0;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .male-teddy .smile {
+            position: absolute;
+            width: 20px;
+            height: 10px;
+            border: 2px solid #654321;
+            border-top: none;
+            border-radius: 0 0 10px 10px;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .male-teddy .body {
+            position: absolute;
+            width: 90px;
+            height: 85px;
+            background: #A0826D;
+            border-radius: 50% 50% 35% 35%;
+            top: 75px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: inset -5px -5px 15px rgba(0,0,0,0.2);
+        }
+
+        .male-teddy .belly {
+            position: absolute;
+            width: 50px;
+            height: 60px;
+            background: #C4A586;
+            border-radius: 50%;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .male-teddy .arm {
+            position: absolute;
+            width: 28px;
+            height: 65px;
+            background: #A0826D;
+            border-radius: 15px;
+            top: 85px;
+            box-shadow: inset -3px -3px 8px rgba(0,0,0,0.2);
+        }
+
+        .male-teddy .arm.left {
+            left: 25px;
+            transform: rotate(-25deg);
+        }
+
+        .male-teddy .arm.right {
+            right: 25px;
+            transform: rotate(25deg);
+        }
+
+        .male-teddy .leg {
+            position: absolute;
+            width: 32px;
+            height: 50px;
+            background: #A0826D;
+            border-radius: 15px;
+            top: 150px;
+            box-shadow: inset -3px -3px 8px rgba(0,0,0,0.2);
+        }
+
+        .male-teddy .leg.left { left: 40px; }
+        .male-teddy .leg.right { right: 40px; }
+
+        .male-teddy .paw {
+            position: absolute;
+            width: 28px;
+            height: 18px;
+            background: #C4A586;
+            border-radius: 50%;
+            bottom: 0;
+            left: 2px;
+        }
+
+        /* Female Teddy (Pink) */
+        .female-teddy {
+            position: relative;
+            width: 180px;
+            height: 220px;
+        }
+
+        .female-teddy .head {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: #FFB6C1;
+            border-radius: 50%;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: inset -5px -5px 15px rgba(255,105,180,0.3);
+        }
+
+        .female-teddy .ear {
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background: #FFB6C1;
+            border-radius: 50%;
+            top: 0;
+            box-shadow: inset -3px -3px 8px rgba(255,105,180,0.3);
+        }
+
+        .female-teddy .ear.left { left: -10px; }
+        .female-teddy .ear.right { right: -10px; }
+
+        .female-teddy .ear-inner {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #FFD1DC;
+            border-radius: 50%;
+            top: 8px;
+            left: 8px;
+        }
+
+        /* Bow on female teddy */
+        .bow {
+            position: absolute;
+            top: -15px;
+            right: 5px;
+            width: 30px;
+            height: 20px;
+        }
+
+        .bow::before,
+        .bow::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 20px;
+            background: #FF69B4;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .bow::before {
+            left: 0;
+            transform: rotate(-20deg);
+        }
+
+        .bow::after {
+            right: 0;
+            transform: rotate(20deg);
+        }
+
+        .bow-center {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #FF1493;
+            border-radius: 50%;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .female-teddy .eye {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #000;
+            border-radius: 50%;
+            top: 30px;
+        }
+
+        .female-teddy .eye.left { left: 20px; }
+        .female-teddy .eye.right { right: 20px; }
+
+        /* Heart-shaped blush */
+        .blush {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            top: 40px;
+        }
+
+        .blush::before,
+        .blush::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 12px;
+            background: #FFB6C1;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .blush::before {
+            left: 0;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        .blush::after {
+            left: 4px;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+
+        .blush.left { left: 8px; }
+        .blush.right { right: 8px; }
+
+        .female-teddy .snout {
+            position: absolute;
+            width: 40px;
+            height: 35px;
+            background: #FFD1DC;
+            border-radius: 50%;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .female-teddy .nose {
+            position: absolute;
+            width: 12px;
+            height: 10px;
+            background: #FF69B4;
+            border-radius: 50% 50% 0 0;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .female-teddy .smile {
+            position: absolute;
+            width: 20px;
+            height: 10px;
+            border: 2px solid #FF69B4;
+            border-top: none;
+            border-radius: 0 0 10px 10px;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .female-teddy .body {
+            position: absolute;
+            width: 90px;
+            height: 85px;
+            background: #FFB6C1;
+            border-radius: 50% 50% 35% 35%;
+            top: 75px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: inset -5px -5px 15px rgba(255,105,180,0.3);
+        }
+
+        .female-teddy .belly {
+            position: absolute;
+            width: 50px;
+            height: 60px;
+            background: #FFD1DC;
+            border-radius: 50%;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .female-teddy .arm {
+            position: absolute;
+            width: 28px;
+            height: 65px;
+            background: #FFB6C1;
+            border-radius: 15px;
+            top: 85px;
+            box-shadow: inset -3px -3px 8px rgba(255,105,180,0.3);
+        }
+
+        .female-teddy .arm.left {
+            left: 25px;
+            transform: rotate(-25deg);
+        }
+
+        .female-teddy .arm.right {
+            right: 25px;
+            transform: rotate(25deg);
+        }
+
+        .female-teddy .leg {
+            position: absolute;
+            width: 32px;
+            height: 50px;
+            background: #FFB6C1;
+            border-radius: 15px;
+            top: 150px;
+            box-shadow: inset -3px -3px 8px rgba(255,105,180,0.3);
+        }
+
+        .female-teddy .leg.left { left: 40px; }
+        .female-teddy .leg.right { right: 40px; }
+
+        .female-teddy .paw {
+            position: absolute;
+            width: 28px;
+            height: 18px;
+            background: #FFD1DC;
+            border-radius: 50%;
+            bottom: 0;
+            left: 2px;
+        }
+
+        /* Celebrating hearts */
+        .celebrating-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .celebrating-heart {
+            position: absolute;
+            font-size: 40px;
+            animation: celebrateFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes celebrateFloat {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .celebrate-message {
+            margin-top: 50px;
+            font-size: 44px;
+            font-weight: bold;
+            color: #FF1744;
+            text-shadow: 3px 3px 6px rgba(255, 23, 68, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -444,6 +938,7 @@
                         and make you smile every single day.
                     </div>
                     <div class="signature">Always Yours, Chikku ❤️</div>
+                    <button class="yes-button" id="yesButton">Yes! 💕</button>
                 </div>
             </div>
 
@@ -460,6 +955,7 @@
             <div class="click-instruction">
                 ✨ Click to open the envelope ✨
             </div>
+
         </div>
 
 
@@ -472,6 +968,85 @@
         <div class="particle" style="--tx: 150px; --ty: 0px; top: 50%; left: 50%;"></div>
         <div class="particle" style="--tx: -150px; --ty: 0px; top: 50%; left: 50%;"></div>
         <div class="particle" style="--tx: 0px; --ty: 150px; top: 50%; left: 50%;"></div>
+    </div>
+
+    <!-- Teddy Bear Couple Scene -->
+    <div class="teddy-couple-scene" id="teddyCoupleScene">
+        <div class="celebrating-hearts">
+            <div class="celebrating-heart" style="left: 10%; top: 20%; animation-delay: 0s;">❤️</div>
+            <div class="celebrating-heart" style="left: 20%; top: 60%; animation-delay: 0.5s;">💕</div>
+            <div class="celebrating-heart" style="left: 80%; top: 30%; animation-delay: 1s;">💖</div>
+            <div class="celebrating-heart" style="left: 85%; top: 70%; animation-delay: 1.5s;">💗</div>
+            <div class="celebrating-heart" style="left: 15%; top: 80%; animation-delay: 2s;">💝</div>
+            <div class="celebrating-heart" style="left: 90%; top: 50%; animation-delay: 2.5s;">💘</div>
+        </div>
+
+        <div class="teddy-couple">
+            <!-- Male Teddy (Light Brown) -->
+            <div class="male-teddy">
+                <div class="head">
+                    <div class="ear left">
+                        <div class="ear-inner"></div>
+                    </div>
+                    <div class="ear right">
+                        <div class="ear-inner"></div>
+                    </div>
+                    <div class="eye left"></div>
+                    <div class="eye right"></div>
+                    <div class="snout">
+                        <div class="nose"></div>
+                        <div class="smile"></div>
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="belly"></div>
+                </div>
+                <div class="arm left"></div>
+                <div class="arm right"></div>
+                <div class="leg left">
+                    <div class="paw"></div>
+                </div>
+                <div class="leg right">
+                    <div class="paw"></div>
+                </div>
+            </div>
+
+            <!-- Female Teddy (Pink) -->
+            <div class="female-teddy">
+                <div class="head">
+                    <div class="bow">
+                        <div class="bow-center"></div>
+                    </div>
+                    <div class="ear left">
+                        <div class="ear-inner"></div>
+                    </div>
+                    <div class="ear right">
+                        <div class="ear-inner"></div>
+                    </div>
+                    <div class="eye left"></div>
+                    <div class="eye right"></div>
+                    <div class="blush left"></div>
+                    <div class="blush right"></div>
+                    <div class="snout">
+                        <div class="nose"></div>
+                        <div class="smile"></div>
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="belly"></div>
+                </div>
+                <div class="arm left"></div>
+                <div class="arm right"></div>
+                <div class="leg left">
+                    <div class="paw"></div>
+                </div>
+                <div class="leg right">
+                    <div class="paw"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="celebrate-message">Forever Together! 💕</div>
     </div>
 
     <script>
@@ -502,6 +1077,22 @@
 
                 // Create confetti burst
                 createConfettiBurst();
+            }
+        });
+
+        // Yes button click interaction
+        const yesButton = document.getElementById('yesButton');
+        const teddyCoupleScene = document.getElementById('teddyCoupleScene');
+
+        yesButton.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent envelope click event
+            
+            // Show teddy couple scene
+            teddyCoupleScene.classList.add('active');
+            
+            // Create massive confetti burst
+            for (let i = 0; i < 100; i++) {
+                setTimeout(() => createConfettiBurst(), i * 50);
             }
         });
 
